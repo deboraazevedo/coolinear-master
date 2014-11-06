@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2> Históricos de comandos do  mês {{ mes }}  de {{ ano }} </h2>
+  <table class="table table-condensed" border="1">
+  <tr>
+    <th>Usuário</th>
+    <th>Data</th>
+    <th>Hora</th>
+    <th>Comando</th>
+  </tr>
+  	  {% for history in histories %}
+  	    <tr>
+          <td>{{ history.usuario.nome_usuario }} </td>
+          <td> <a href = "{{  history.data.day }}/"> {{ history.data.day }}  </a>/  {{  history.data.month }}</td>
+          <td>{{	history.data.hour }} : {{	history.data.minute }} : {{	history.data.second }}</td>
+          <td>{{ history.comando }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

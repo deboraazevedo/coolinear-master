@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Histórico de comandos de {{ usuario.nome_completo }} ({{ usuario.nome_usuario}}) em {{ dia }}/{{mes}}/{{ano}}</h2>
+<ol>
+  {% for history in histories %}
+    <li>{{ history.data.hour }}:{{ history.data.minute }}:{{ history.data.second }} - {{ history.comando }}</li>
+  {% endfor %}
+</ol>
+{% endblock %}
+

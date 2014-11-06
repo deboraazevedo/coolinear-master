@@ -1,0 +1,23 @@
+import os, time
+
+
+def get_dirs(p):
+    p = os.path.abspath('/home/debora/Projects/histories')
+    return [n for n in os.listdir(p) if os.path.isdir(os.path.join(p, n))]
+
+
+for file_list in os.listdir(r'/home/debora/Projects/histories'):
+    os.path.join(r'/home/debora/Projects/histories', file_list)
+    get_dirs(".")
+    print (get_dirs("."))
+    os.chdir('andreluiz')
+    arq = open('bash_history')
+    time_stamp = arq.readline()
+    command = arq.readline()
+    time.localtime(float(time_stamp[1:]))
+    date_time = time.localtime(float(time_stamp[1:]))
+    while time_stamp and command:
+        date_time = time.localtime(float(time_stamp[1:]))
+        print(time.strftime('%F %T - ', date_time), command)
+        time_stamp, command = arq.readline(), arq.readline()
+    break

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Novo Item{% endblock %}
+
+<h2> Adicionar nova agenda </h2>
+
+{% block content %}
+<form action="/agendas/add/" method="POST">
+
+  <div class="field">
+    {{ form.nome.label }}
+    {{ form.nome }}
+  </div>
+
+  <div class="field">
+    {{ form.telefone.label }}
+    {{ form.telefone }}
+  </div>
+
+  <div class="field">
+    {{ form.email.label }}
+    {{ form.email }}
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  <a href="/" class="btn">
+    Voltar
+  </a>
+</form>
+{% endblock %}

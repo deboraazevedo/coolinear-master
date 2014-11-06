@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Agenda Pyramid</title>
+  </head>
+  <body>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+    <script src="{{ request.static_url('agenda:static/js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

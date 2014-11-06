@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2> Históricos de comandos de {{ usuario.nome_completo }} ({{ usuario.nome_usuario}}) em {{ dia }}/{{mes}}/{{ano}}</h2>
+  <table class="table table-condensed" border="1">
+  <tr>
+    <th>Hora</th>
+    <th>Comando</th>
+  </tr>
+  	  {% for history in histories %}
+  	    <tr>
+          <td>{{	history.data.hour }} : {{	history.data.minute }} : {{	history.data.second }}</td>
+          <td>{{ history.comando }}</td>
+        </tr>
+  	  {% endfor %}
+  </table>
+{% endblock %}
