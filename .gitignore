@@ -1,0 +1,8 @@
+*~
+*.tmp
+*.pydevproject
+tmp/
+.settings/
+.loadpath
+*.py[cod]
+build/
